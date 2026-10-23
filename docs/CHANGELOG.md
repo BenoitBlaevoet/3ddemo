@@ -1,5 +1,11 @@
 # Stylized Lab: Changelog
 
+## 2026-10-23: Repo + GitHub Pages deploy
+
+- Git repo on `main`, remote github.com/BenoitBlaevoet/3ddemo (public)
+- `.github/workflows/deploy.yml`: lint, build, deploy `dist/` to Pages on every push to `main`
+- Vite `base` is `/3ddemo/` for builds only. Live at https://benoitblaevoet.github.io/3ddemo/
+
 ## 2026-10-23: GULP concept page
 
 - Picked GULP as the product (user call). Built the concept homepage with the full stack: Vite + React 18 + TS, R3F, GSAP ScrollTrigger, Lenis

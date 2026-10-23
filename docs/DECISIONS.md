@@ -94,4 +94,14 @@ Each significant technical or art direction decision is recorded here in a simpl
 
 ---
 
+## ADR-009: Hosting on GitHub Pages via Actions
+
+- **Date**: 2026-10-23
+- **Status**: Accepted (replaces the "Vercel or Netlify" placeholder in ARCHITECTURE)
+- **Decision**: A workflow on push to `main` runs `npm ci`, lint and build, then `actions/deploy-pages`. Vite `base: '/3ddemo/'` applies to builds only.
+- **Reason**: The site is fully static, there's no extra account to manage, and the code and demo live in one place.
+- **Constraint**: Pages needs a public repo on the current GitHub plan.
+
+---
+
 _To add a decision, copy the template above and increment the ADR number._

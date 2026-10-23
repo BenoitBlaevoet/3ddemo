@@ -25,7 +25,7 @@
 - ESLint + Prettier
 
 ### Hosting
-To be decided (Vercel or Netlify static). No backend.
+GitHub Pages, deployed by `.github/workflows/deploy.yml` on push to `main` (ADR-009). No backend.
 
 ## Project structure
 

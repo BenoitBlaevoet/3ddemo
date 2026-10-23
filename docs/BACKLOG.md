@@ -12,7 +12,7 @@
 
 ## Phase 1: Scaffold
 
-- [ ] `git init`, `.gitignore` (node_modules, dist, large `assets-src/` files)
+- [x] `git init`, `.gitignore` (node_modules, dist, large `assets-src/` files)
 - [x] Vite + React + TS scaffold, ESLint + Prettier
 - [x] Install three, R3F, drei, gsap, @gsap/react, lenis (postprocessing not needed yet)
 - [x] Lenis ↔ ScrollTrigger sync in `src/lib/`
@@ -28,7 +28,7 @@
 - [x] 5 colorways, same geometry, impact-frame blink swap + auto shuffle
 - [x] Toon droplet bursts, squash and stretch, speed lines, halftone, marquees
 - [x] Phone layout (portrait poses, panel deck)
-- [ ] `git init` + first commit (waiting for go-ahead)
+- [x] `git init` + first commit, pushed to github.com/BenoitBlaevoet/3ddemo
 - [ ] Code-split three.js chunk (1.1 MB JS)
 - [ ] Real-device mobile check (tested only in 390 px iframes)
 - [ ] Use a bottle render as the img2img reference for consistent 2D assets (Recraft)
@@ -53,7 +53,7 @@
 
 - [ ] Performance pass (payload, fps, LCP)
 - [ ] Accessibility pass (contrast, reduced motion, keyboard)
-- [ ] Deploy (Vercel or Netlify)
+- [x] Deploy: GitHub Pages via Actions on push to `main` (ADR-009)
 - [ ] Final write-up in `PIPELINE_NOTES.md`: recommended pipeline for future projects
 
 ## Nice to have
