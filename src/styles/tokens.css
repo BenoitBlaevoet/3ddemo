@@ -1,0 +1,35 @@
+:root {
+  /* Fixed palette */
+  --color-ink: #111014;
+  --color-paper: #fffaf0;
+
+  /* Colorway palette, rewritten at runtime by lib/colorways applyColorwayVars */
+  --color-bg: #ff5a7a;
+  --color-body: #1e6fe0;
+  --color-accent: #a6e22e;
+  --color-straw: #ffffff;
+
+  --font-display: 'Dela Gothic One', 'Arial Black', sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+
+  --ink-line: 4px;
+  --ink-border: var(--ink-line) solid var(--color-ink);
+  --ink-shadow: 6px 6px 0 var(--color-ink);
+  --ink-shadow-lg: 10px 10px 0 var(--color-ink);
+
+  --ease-snap: cubic-bezier(0.2, 1.6, 0.4, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --z-under: 0;
+  --z-canvas: 1;
+  --z-content: 2;
+  --z-ui: 3;
+}

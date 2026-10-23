@@ -1,0 +1,194 @@
+.section {
+  position: relative;
+  height: 200vh;
+}
+
+/* Sticky creates a stacking context: anything meant to sit under the canvas needs its own layer. */
+.underlay {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-under);
+  height: 100vh;
+  height: 100svh;
+  margin-bottom: -100vh;
+  margin-bottom: -100svh;
+  overflow: hidden;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-content);
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+/* Hollow name behind the bottle. Re-keyed on every swap so it slams in again. */
+.bigName {
+  position: absolute;
+  inset: 50% -10vw auto;
+  z-index: var(--z-under);
+  margin: 0;
+  translate: 0 -50%;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font: clamp(96px, 19vw, 340px) / 0.8 var(--font-display);
+  color: transparent;
+  -webkit-text-stroke: 3px var(--color-ink);
+  animation: slam 0.45s var(--ease-snap) both;
+}
+
+@keyframes slam {
+  from {
+    transform: scale(1.35) skewX(-12deg);
+    opacity: 0;
+  }
+}
+
+.panel {
+  position: absolute;
+  right: 6vw;
+  top: 50%;
+  z-index: var(--z-content);
+  width: min(440px, 88vw);
+  translate: 0 -50%;
+}
+
+.kicker {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 12px;
+  font: 800 13px/1 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.title {
+  margin: var(--space-3) 0 var(--space-4);
+  font: clamp(48px, 5.5vw, 80px) / 0.9 var(--font-display);
+  color: var(--color-paper);
+  -webkit-text-stroke: 5px var(--color-ink);
+  paint-order: stroke fill;
+  text-shadow: 6px 6px 0 var(--color-ink);
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 10px 14px;
+  font: 800 18px/1 var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  border: var(--ink-border);
+  box-shadow: 5px 5px 0 var(--color-ink);
+  cursor: pointer;
+  transition:
+    transform 0.14s var(--ease-snap),
+    box-shadow 0.14s var(--ease-snap);
+}
+
+.option:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0 var(--color-ink);
+}
+
+.option[aria-pressed='true'] {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  transform: translateX(-12px);
+}
+
+.swatch {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border: 3px solid var(--color-ink);
+  border-radius: 50%;
+  /* Hard split, no blend: two flat inks. */
+  background: linear-gradient(135deg, var(--swatch-a) 0 55%, var(--swatch-b) 55% 100%);
+  box-shadow: 0 0 0 2px var(--color-paper);
+}
+
+.name {
+  flex: 1;
+}
+
+.jp {
+  font: 13px/1 var(--font-display);
+  opacity: 0.7;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-4);
+}
+
+.counter {
+  font: 22px/1 var(--font-display);
+}
+
+.auto {
+  padding: 6px 10px;
+  font: 800 12px/1 var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: transparent;
+  border: 3px solid var(--color-ink);
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .panel {
+    top: auto;
+    bottom: var(--space-4);
+    right: 6vw;
+    translate: none;
+  }
+
+  .title {
+    margin-block: var(--space-2) var(--space-3);
+  }
+
+  .list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .option {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .jp {
+    display: none;
+  }
+
+  .bigName {
+    inset-block-start: 26%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bigName {
+    animation: none;
+  }
+}

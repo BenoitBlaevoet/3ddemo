@@ -1,0 +1,5 @@
+node_modules
+dist
+*.local
+assets-src/**/*.glb
+assets-src/video

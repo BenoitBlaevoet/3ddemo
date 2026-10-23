@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept Moodboards</title>
+<style>
+  :root {
+    --ink: #111;
+    --paper: #fffdf6;
+    --font-display: 'Arial Black', 'Helvetica Neue', sans-serif;
+    --font-body: system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); }
+  header { padding: 32px 24px 8px; }
+  header h1 { margin: 0; font: 900 40px/1 var(--font-display); text-transform: uppercase; }
+  header p { margin: 8px 0 0; max-width: 70ch; }
+  nav { display: flex; gap: 12px; flex-wrap: wrap; padding: 16px 24px; }
+  nav a { color: var(--ink); font-weight: 700; border: 3px solid var(--ink); padding: 4px 12px; text-decoration: none; box-shadow: 4px 4px 0 var(--ink); background: #fff; }
+  .board { margin: 24px; border: 4px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); background: var(--bg); }
+  .board-head { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: end; padding: 20px 24px; border-bottom: 4px solid var(--ink); background: #fff; }
+  .board-head h2 { margin: 0; font: 900 56px/0.9 var(--font-display); color: var(--c1); -webkit-text-stroke: 2px var(--ink); }
+  .slogan { margin: 6px 0 0; font: 900 22px/1.1 var(--font-display); font-style: italic; }
+  .what { margin: 4px 0 0; font-size: 14px; }
+  .swatches { display: flex; gap: 6px; }
+  .swatch { width: 56px; text-align: center; font: 600 10px/1.2 monospace; }
+  .swatch span { display: block; height: 56px; border: 3px solid var(--ink); margin-bottom: 4px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 8px; }
+  .grid figure { margin: 0; position: relative; border: 3px solid var(--ink); background: #fff; }
+  .grid figure.big { grid-column: span 2; grid-row: span 2; }
+  .grid img { display: block; width: 100%; height: auto; }
+  .grid figcaption { position: absolute; left: 0; bottom: 0; background: var(--ink); color: #fff; font: 600 11px/1 monospace; padding: 4px 6px; }
+  .grid figure.pick::after { content: 'PICK'; position: absolute; top: 6px; right: 6px; background: #fff; border: 2px solid var(--ink); font: 900 12px/1 var(--font-display); padding: 3px 6px; }
+  .grid figure.reject img { opacity: .45; }
+  .notes { padding: 12px 24px 20px; background: #fff; border-top: 4px solid var(--ink); }
+  .notes ul { margin: 0; padding-left: 18px; }
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .board-head { grid-template-columns: 1fr; }
+    .board-head h2 { font-size: 40px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Stylized Lab: concept moodboards</h1>
+  <p>Phase 0. 4 product concepts, 6 to 7 Recraft V4.1 raster images each: 3 hero variations, 2 action panels, 1 pattern. Generated 2026-10-23 at 2 credits per image. Krea was skipped because the free account has only 2 credits. Big tile = current pick.</p>
+</header>
+<nav>
+  <a href="#poppo">POPPO</a><a href="#blip">BLIP</a><a href="#snappy">SNAPPY</a><a href="#gulp">GULP</a>
+</nav>
+
+<section class="board" id="poppo" style="--bg:#5aa9ee; --c1:#e8304a">
+  <div class="board-head">
+    <div>
+      <h2>POPPO</h2>
+      <p class="slogan">"Crack it. Pop it."</p>
+      <p class="what">Sparkling fruit soda, short chubby can</p>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><span style="background:#e8304a"></span>#E8304A</div>
+      <div class="swatch"><span style="background:#f5d83a"></span>#F5D83A</div>
+      <div class="swatch"><span style="background:#ffffff"></span>#FFFFFF</div>
+      <div class="swatch"><span style="background:#5aa9ee"></span>#5AA9EE</div>
+      <div class="swatch"><span style="background:#111111"></span>#111111</div>
+    </div>
+  </div>
+  <div class="grid">
+    <figure class="big pick"><img src="poppo/poppo-hero-3.webp" alt="POPPO can, clean 3/4 view"><figcaption>hero-3</figcaption></figure>
+    <figure><img src="poppo/poppo-hero-1.webp" alt="POPPO can, squashed character feel"><figcaption>hero-1</figcaption></figure>
+    <figure><img src="poppo/poppo-hero-2.webp" alt="POPPO can, tilted"><figcaption>hero-2</figcaption></figure>
+    <figure><img src="poppo/poppo-action-2.webp" alt="POPPO can exploding with fizz"><figcaption>action-2</figcaption></figure>
+    <figure><img src="poppo/poppo-action-1.webp" alt="POPPO can bursting, low angle"><figcaption>action-1</figcaption></figure>
+    <figure><img src="poppo/poppo-pattern-1.webp" alt="Cherry and lemon pattern"><figcaption>pattern-1</figcaption></figure>
+    <figure class="reject"><img src="poppo/poppo-hero-v0.webp" alt="First attempt, flag-like color blocks"><figcaption>hero-v0 (rejected)</figcaption></figure>
+  </div>
+  <div class="notes"><ul>
+    <li>Simplest silhouette. Easiest image-to-3D candidate.</li>
+    <li>v0 used the original prompt. Its red/yellow halves plus a black shadow block read as a flag. Fix: a wavy yellow band, a darker-red shadow and white bubble dots.</li>
+    <li>"Chubby" only partly respected. The cans still have standard proportions.</li>
+  </ul></div>
+</section>
+
+<section class="board" id="blip" style="--bg:#8e7bd6; --c1:#5fe0c0">
+  <div class="board-head">
+    <div>
+      <h2>BLIP</h2>
+      <p class="slogan">"Tap. Vibe. Repeat."</p>
+      <p class="what">Pebble wireless earbuds case</p>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><span style="background:#5fe0c0"></span>#5FE0C0</div>
+      <div class="swatch"><span style="background:#ff3d9a"></span>#FF3D9A</div>
+      <div class="swatch"><span style="background:#8e7bd6"></span>#8E7BD6</div>
+      <div class="swatch"><span style="background:#ffffff"></span>#FFFFFF</div>
+      <div class="swatch"><span style="background:#111111"></span>#111111</div>
+    </div>
+  </div>
+  <div class="grid">
+    <figure class="big pick"><img src="blip/blip-hero-2.webp" alt="BLIP case open, buds floating"><figcaption>hero-2</figcaption></figure>
+    <figure><img src="blip/blip-hero-1.webp" alt="BLIP case, buds above"><figcaption>hero-1</figcaption></figure>
+    <figure><img src="blip/blip-hero-3.webp" alt="BLIP case close-up"><figcaption>hero-3</figcaption></figure>
+    <figure><img src="blip/blip-action-1.webp" alt="BLIP case bursting, stem buds"><figcaption>action-1</figcaption></figure>
+    <figure><img src="blip/blip-action-2.webp" alt="BLIP case with speed lines"><figcaption>action-2</figcaption></figure>
+    <figure><img src="blip/blip-pattern-1.webp" alt="Music notes pattern"><figcaption>pattern-1</figcaption></figure>
+  </div>
+  <div class="notes"><ul>
+    <li>Strongest palette. Mint, pink and lilac read as the most "anime".</li>
+    <li>Action panels drift: the buds turn into stem-style buds and the case becomes a cylinder. Product consistency is weak without a locked style.</li>
+    <li>Open lid plus loose buds = 3 meshes. Harder image-to-3D than a single object.</li>
+  </ul></div>
+</section>
+
+<section class="board" id="snappy" style="--bg:#f2d35b; --c1:#f07a2e">
+  <div class="board-head">
+    <div>
+      <h2>SNAPPY</h2>
+      <p class="slogan">"Click it. Keep it."</p>
+      <p class="what">Chunky instant camera</p>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><span style="background:#f07a2e"></span>#F07A2E</div>
+      <div class="swatch"><span style="background:#f3e6cc"></span>#F3E6CC</div>
+      <div class="swatch"><span style="background:#1f8a9a"></span>#1F8A9A</div>
+      <div class="swatch"><span style="background:#f2d35b"></span>#F2D35B</div>
+      <div class="swatch"><span style="background:#111111"></span>#111111</div>
+    </div>
+  </div>
+  <div class="grid">
+    <figure class="big pick"><img src="snappy/snappy-hero-2.webp" alt="SNAPPY camera, photo sliding out"><figcaption>hero-2</figcaption></figure>
+    <figure><img src="snappy/snappy-hero-1.webp" alt="SNAPPY camera, front view"><figcaption>hero-1</figcaption></figure>
+    <figure><img src="snappy/snappy-hero-3.webp" alt="SNAPPY camera, round body"><figcaption>hero-3</figcaption></figure>
+    <figure><img src="snappy/snappy-action-1.webp" alt="SNAPPY flash burst, manga panel"><figcaption>action-1</figcaption></figure>
+    <figure><img src="snappy/snappy-action-2.webp" alt="SNAPPY camera, photos flying"><figcaption>action-2</figcaption></figure>
+    <figure><img src="snappy/snappy-pattern-1.webp" alt="Flash burst pattern"><figcaption>pattern-1</figcaption></figure>
+  </div>
+  <div class="notes"><ul>
+    <li>Best manga-panel energy (action-1). The flash burst works naturally as an impact frame.</li>
+    <li>Busiest silhouette (lens, buttons, print). Most detail to lose in image-to-3D.</li>
+    <li>The pattern is too busy for a background. Use it as an accent only.</li>
+  </ul></div>
+</section>
+
+<section class="board" id="gulp" style="--bg:#f2557a; --c1:#1e6fe0">
+  <div class="board-head">
+    <div>
+      <h2>GULP</h2>
+      <p class="slogan">"Sip happens."</p>
+      <p class="what">Flip-straw water bottle</p>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><span style="background:#1e6fe0"></span>#1E6FE0</div>
+      <div class="swatch"><span style="background:#9bdb3a"></span>#9BDB3A</div>
+      <div class="swatch"><span style="background:#f2557a"></span>#F2557A</div>
+      <div class="swatch"><span style="background:#ffffff"></span>#FFFFFF</div>
+      <div class="swatch"><span style="background:#111111"></span>#111111</div>
+    </div>
+  </div>
+  <div class="grid">
+    <figure class="big pick"><img src="gulp/gulp-hero-2.webp" alt="GULP bottle with splash"><figcaption>hero-2</figcaption></figure>
+    <figure><img src="gulp/gulp-hero-1.webp" alt="GULP bottle, round"><figcaption>hero-1</figcaption></figure>
+    <figure><img src="gulp/gulp-hero-3.webp" alt="GULP bottle, jug handle"><figcaption>hero-3</figcaption></figure>
+    <figure><img src="gulp/gulp-action-1.webp" alt="GULP bottle in splash with ice"><figcaption>action-1</figcaption></figure>
+    <figure><img src="gulp/gulp-action-2.webp" alt="GULP bottle flying through splash"><figcaption>action-2</figcaption></figure>
+    <figure><img src="gulp/gulp-pattern-1.webp" alt="Droplets and ice pattern"><figcaption>pattern-1</figcaption></figure>
+  </div>
+  <div class="notes"><ul>
+    <li>The splashes give great fake-3D and particle material.</li>
+    <li>Product shape drifts a lot. The heroes look like a jerrycan or jug, the carry loop turns into a handle, and the straw is inconsistent. It needs a tighter shape prompt or a reference image.</li>
+    <li>The action panels show a different bottle again (tall, plain).</li>
+  </ul></div>
+</section>
+</body>
+</html>

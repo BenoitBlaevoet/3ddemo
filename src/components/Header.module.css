@@ -1,0 +1,63 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: var(--z-ui);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  pointer-events: none;
+}
+
+.header > * {
+  pointer-events: auto;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  font: 28px/1 var(--font-display);
+  text-decoration: none;
+  color: var(--color-paper);
+  -webkit-text-stroke: 5px var(--color-ink);
+  paint-order: stroke fill;
+}
+
+.kana {
+  font-size: 12px;
+  color: var(--color-ink);
+  -webkit-text-stroke: 0;
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.link {
+  padding: 8px 14px;
+  font: 800 13px/1 var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--color-paper);
+  border: 3px solid var(--color-ink);
+  box-shadow: 3px 3px 0 var(--color-ink);
+  transition: transform 0.14s var(--ease-snap);
+}
+
+.link:hover {
+  transform: translate(-2px, -2px) rotate(-2deg);
+}
+
+.buy {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+@media (max-width: 720px) {
+  .link:not(.buy) {
+    display: none;
+  }
+}

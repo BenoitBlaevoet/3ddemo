@@ -1,0 +1,51 @@
+.band {
+  position: relative;
+  z-index: var(--z-content);
+  display: flex;
+  overflow: hidden;
+  margin: -12px -20px;
+  padding: 14px 0;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  transform: rotate(-2deg);
+  border-block: 4px solid var(--color-paper);
+}
+
+.track {
+  display: flex;
+  flex-shrink: 0;
+  animation: slide 22s linear infinite;
+}
+
+.reverse {
+  transform: rotate(2deg);
+}
+
+.reverse .track {
+  animation-direction: reverse;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-right: var(--space-4);
+  font: 26px/1 var(--font-display);
+  white-space: nowrap;
+}
+
+.star {
+  color: var(--color-accent);
+}
+
+@keyframes slide {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

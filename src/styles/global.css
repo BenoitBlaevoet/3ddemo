@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* clip, not hidden: hidden would turn the page into a scroll container and break sticky. */
+  overflow-x: clip;
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Halftone screen over the flat background, heavier towards the corners. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-under);
+  pointer-events: none;
+  background: radial-gradient(var(--color-ink) 1.1px, transparent 1.6px) 0 0 / 14px 14px;
+  opacity: 0.14;
+  mask-image: radial-gradient(ellipse at center, transparent 35%, #000 100%);
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Impact frames: the page content disappears, only the flash and the bottle remain. */
+html.is-impact main,
+html.is-impact header {
+  visibility: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+:focus-visible {
+  outline: 3px dashed var(--color-ink);
+  outline-offset: 4px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

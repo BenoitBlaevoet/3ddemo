@@ -1,0 +1,130 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: calc(var(--space-7) + var(--space-3)) var(--space-5) var(--space-6);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.lines {
+  position: absolute;
+  left: 69%;
+  top: 47%;
+  width: 150vmax;
+  height: 150vmax;
+  translate: -50% -50%;
+  z-index: var(--z-under);
+  color: var(--color-ink);
+  opacity: 0.85;
+}
+
+/* Sits under the canvas: the bottle stands in front of the wordmark. */
+.title {
+  position: absolute;
+  left: var(--space-4);
+  right: var(--space-4);
+  bottom: -0.06em;
+  z-index: var(--z-under);
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  font: clamp(120px, 31vw, 560px) / 0.8 var(--font-display);
+  color: var(--color-paper);
+  -webkit-text-stroke: 8px var(--color-ink);
+  paint-order: stroke fill;
+  text-shadow: 14px 14px 0 var(--color-ink);
+  pointer-events: none;
+}
+
+.letter {
+  display: inline-block;
+}
+
+.copy {
+  position: relative;
+  z-index: var(--z-content);
+  max-width: 520px;
+}
+
+.kicker {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 12px;
+  font: 800 14px/1 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  transform: rotate(-2deg);
+}
+
+.slogan {
+  margin: var(--space-4) 0;
+  font: clamp(56px, 8vw, 124px) / 0.88 var(--font-display);
+  color: var(--color-accent);
+  -webkit-text-stroke: 6px var(--color-ink);
+  paint-order: stroke fill;
+  text-shadow: 7px 7px 0 var(--color-ink);
+  transform: rotate(-5deg);
+  transform-origin: left center;
+}
+
+.lede {
+  max-width: 32ch;
+  margin: 0 0 var(--space-4);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.kana {
+  position: absolute;
+  top: calc(var(--space-7) + var(--space-3));
+  right: var(--space-4);
+  z-index: var(--z-content);
+  margin: 0;
+  writing-mode: vertical-rl;
+  font: 26px/1 var(--font-display);
+  letter-spacing: 0.25em;
+}
+
+.hint {
+  position: absolute;
+  right: var(--space-5);
+  bottom: 38%;
+  z-index: var(--z-content);
+  margin: 0;
+  padding: 6px 10px;
+  font: 800 12px/1 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--color-paper);
+  border: 3px solid var(--color-ink);
+  transform: rotate(4deg);
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding: var(--space-7) var(--space-3) var(--space-6);
+  }
+
+  .lines {
+    left: 50%;
+    top: 62%;
+  }
+
+  .title {
+    -webkit-text-stroke-width: 5px;
+    text-shadow: 7px 7px 0 var(--color-ink);
+  }
+
+  .hint {
+    display: none;
+  }
+}
